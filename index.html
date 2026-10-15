@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Enquiry Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      text-align: center;
+      color: #253047;
+    }
+    main {
+      max-width: 700px;
+      margin: 100px auto;
+      padding: 24px;
+    }
+    h1 { color: #2749a5; }
+    p { line-height: 1.7; }
+    :root {
+      --chat--color-primary: #2749a5;
+      --chat--color-secondary: #2749a5;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Student Enquiry Assistant</h1>
+    <p>Welcome! Ask questions about our available courses.</p>
+    <p>Courses: Python Basics and Data Engineering Basics.</p>
+    <p>Click the chat icon at the bottom-right to start.</p>
+  </main>
+
+  <script type="module">
+    import { createChat } from
+      'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl: 'https://kalyanmaddu.app.n8n.cloud/webhook/d9b245b6-997b-4b96-9120-e4c0e6747e49/chat',
+      mode: 'window',
+      showWelcomeScreen: false,
+      initialMessages: [
+        'Hello! Welcome to our Student Enquiry Assistant.',
+        'How can I help you today?'
+      ]
+    });
+  </script>
+</body>
+</html>
