@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Student Enquiry Assistant</title>
-  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+    rel="stylesheet"
+  >
+
   <style>
     body {
       margin: 0;
@@ -14,25 +19,55 @@
       text-align: center;
       color: #253047;
     }
+
     main {
-      max-width: 700px;
+      max-width: 850px;
       margin: 100px auto;
-      padding: 24px;
+      padding: 25px;
     }
-    h1 { color: #2749a5; }
-    p { line-height: 1.7; }
+
+    h1 {
+      color: #2563eb;
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Expanded chatbot window */
     :root {
-      --chat--color-primary: #2749a5;
-      --chat--color-secondary: #2749a5;
+      --chat--window--width: 550px;
+      --chat--window--height: 700px;
+    }
+
+    /* Fit smaller screens */
+    @media (max-width: 600px) {
+      :root {
+        --chat--window--width: 95vw;
+        --chat--window--height: 80vh;
+      }
     }
   </style>
 </head>
+
 <body>
   <main>
     <h1>Student Enquiry Assistant</h1>
-    <p>Welcome! Ask questions about our available courses.</p>
-    <p>Courses: Python Basics and Data Engineering Basics.</p>
-    <p>Click the chat icon at the bottom-right to start.</p>
+
+    <p>
+      Welcome! Ask questions about our available courses.
+    </p>
+
+    <p>
+      <strong>Courses:</strong>
+      Python Basics and Data Engineering Basics.
+    </p>
+
+    <p>
+      Click the chat icon at the bottom-right to start.
+    </p>
   </main>
 
   <script type="module">
@@ -40,13 +75,9 @@
       'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
     createChat({
-      webhookUrl: 'https://kalyanmaddu.app.n8n.cloud/webhook/d9b245b6-997b-4b96-9120-e4c0e6747e49/chat',
-      mode: 'window',
-      showWelcomeScreen: false,
-      initialMessages: [
-        'Hello! Welcome to our Student Enquiry Assistant.',
-        'How can I help you today?'
-      ]
+      webhookUrl:
+        'https://kalyanmaddu.app.n8n.cloud/webhook/d9b245b6-997b-4b96-9120-e4c0e6747e49/chat',
+      mode: 'window'
     });
   </script>
 </body>
